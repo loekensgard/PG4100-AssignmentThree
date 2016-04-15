@@ -12,8 +12,41 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <name>loktho14 Maven Webapp</name>
-    <url>http://maven.apache.org</url>
+    <name>Webapp for primenumbers</name>
+    <description>
+        This is a webapp for checking if a number is a prime.
+    </description>
+
+    <developers>
+        <developer>
+            <name>Thorstein Løkensgard</name>
+
+            <url>https://github.com/Loktho</url>
+
+            <organization>Westerdals Oslo ACT</organization>
+            <organizationUrl>http://www.westerdals.no</organizationUrl>
+            <timezone>UTC+1</timezone>
+            <email>loktho14@student.westerdals.no</email>
+            <roles>
+                <role>Programming</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <contributors>
+        <contributor>
+            <name>Per Lauvås</name>
+
+            <organization>Westerdals Oslo ACT</organization>
+            <organizationUrl>http://www.westerdals.no</organizationUrl>
+            <timezone>UTC+1</timezone>
+            <email>lauper@westerdals.no</email>
+            <roles>
+                <role>Teacher</role>
+            </roles>
+        </contributor>
+    </contributors>
+
     <build>
         <finalName>loktho14</finalName>
         <plugins>
@@ -31,29 +64,37 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>3.8.1</version>
+            <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <!--Use servlet for making a webpage-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
-            <version>1.2</version>
-        </dependency>
+        <!-- Use common-math3 for primes -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-math3</artifactId>
             <version>3.6.1</version>
         </dependency>
+        <!-- Use log4j2 for logging -->
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-web</artifactId>
+            <version>2.5</version>
         </dependency>
     </dependencies>
 </project>

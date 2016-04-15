@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="debug">
+    <Filter type="ThresholdFilter" level="debug"/>
+    <Properties>
+        <Property name="path">C:\Users\Thorstein\logs\</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <File name="RequestsFile" fileName="${path}requests.log">
+            <PatternLayout>
+                <pattern>%msg%n</pattern>
+            </PatternLayout>
+        </File>
+        <File name="ErrorsFile" fileName="${path}errors.log">
+            <PatternLayout>
+                <pattern>%msg%n</pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+    <Loggers>
+        <logger name="Requests" level="info">
+            <AppenderRef ref="RequestsFile" level="info"/>
+        </logger>
+        <logger name="Errors" level="error">
+            <AppenderRef ref="ErrorsFile" level="error"/>
+        </logger>
+        <Root level="debug">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>
