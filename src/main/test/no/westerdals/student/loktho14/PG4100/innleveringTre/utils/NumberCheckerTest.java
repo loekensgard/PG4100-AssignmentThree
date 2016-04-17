@@ -38,7 +38,7 @@ public class NumberCheckerTest {
     }
 
     @Test
-    public void toStringMethod() throws Exception {
+    public void test_output_message() throws Exception {
         nc = new NumberChecker("12");
         assertEquals("12 er ikke et primtall", nc.toString(12));
 
