@@ -1,6 +1,4 @@
-package no.westerdals.student.loktho14.PG4100.innleveringTre.utils; /**
- * Created by Thorstein on 14.04.2016.
- */
+package no.westerdals.student.loktho14.PG4100.innleveringTre.utils;
 
 import org.apache.commons.math3.primes.Primes;
 import org.apache.logging.log4j.LogManager;

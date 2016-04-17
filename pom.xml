@@ -13,14 +13,12 @@
     </properties>
 
     <name>Webapp for primenumbers</name>
-    <description>
-        This is a webapp for checking if a number is a prime.
-    </description>
+    <description>This is a webapp for checking if a number is a prime.</description>
+    <url>http://maven.apache.org</url>
 
     <developers>
         <developer>
             <name>Thorstein Løkensgard</name>
-
             <url>https://github.com/Loktho</url>
 
             <organization>Westerdals Oslo ACT</organization>
