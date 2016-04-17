@@ -9,6 +9,7 @@ public class NumberChecker {
     private int number = 0;
     private static final Logger logger = LogManager.getLogger("Errors");
 
+    //Method for checking if the input is valid
     public NumberChecker(String nr){
         if(nr.startsWith("-")){
             logger.error("Error : User tried to send in negative number");
@@ -31,10 +32,12 @@ public class NumberChecker {
         return number;
     }
 
+    //Method from apache-commons-math3-primes for checking ifour number is a prime or not
     public boolean isPrime(int number){
         return Primes.isPrime(number);
     }
 
+    //Method for output to user
     public String toString(int number){
         if((!isPrime(number))){
             return number + " er ikke et primtall";

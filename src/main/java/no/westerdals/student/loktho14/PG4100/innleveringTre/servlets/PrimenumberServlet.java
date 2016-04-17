@@ -22,12 +22,6 @@ public class PrimenumberServlet extends HttpServlet{
     private NumberChecker nc;
     private static final Logger logger = LogManager.getLogger("Requests");
 
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.sendRedirect(req.getContextPath());
-    }
-
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         logger.info("Debug : Requesting parameter" + " - Date: " + new Date().toString());
@@ -40,6 +34,7 @@ public class PrimenumberServlet extends HttpServlet{
 
     }
 
+    //Output - Servlet
     private void output(HttpServletResponse resp) throws IOException {
         try (PrintWriter out = resp.getWriter()) {
             logger.info("Debug : Output started" + " - Date: " + new Date().toString());
