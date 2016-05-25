@@ -5,11 +5,22 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.util.Arrays;
 
+/**
+ * @author Thorstein
+ *
+ * NumberChecker is a class checking if a given number is positiv
+ * and if its a number at all.
+ */
+
 public class NumberChecker {
     private int number = 0;
     private static final Logger logger = LogManager.getLogger("Errors");
 
-    //Method for checking if the input is valid
+
+    /**
+     * Method for checking if the given input is positive.
+     * @param nr
+     */
     public NumberChecker(String nr){
         if(nr.startsWith("-")){
             logger.error("Error : User tried to send in negative number");
@@ -19,6 +30,10 @@ public class NumberChecker {
         }
     }
 
+    /**
+     * Method for checking if the given input is a number
+     * @param nr
+     */
     private void isNumber(String nr) {
         try{
             number = Integer.parseInt(nr);
@@ -28,16 +43,29 @@ public class NumberChecker {
         }
     }
 
+    /**
+     * @return a number
+     */
     public int getNumber(){
         return number;
     }
 
-    //Method from apache-commons-math3-primes for checking ifour number is a prime or not
+    /**
+     *
+     * @param number
+     * @return a boolean telling if the given number is a prime or not
+     *
+     * Method from apache-commons-math3-primes for checking if our number is a prime or not
+     */
     public boolean isPrime(int number){
         return Primes.isPrime(number);
     }
 
-    //Method for output to user
+    /**
+     *
+     * @param number
+     * @return a string telling te user if his number is a prime or not
+     */
     public String toString(int number){
         if((!isPrime(number))){
             return number + " er ikke et primtall";

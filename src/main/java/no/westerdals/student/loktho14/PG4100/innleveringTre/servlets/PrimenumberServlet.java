@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Date;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,6 +23,21 @@ public class PrimenumberServlet extends HttpServlet{
     private NumberChecker nc;
     private static final Logger logger = LogManager.getLogger("Results");
 
+
+
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest req, HttpServletResponse
+     *      resp)
+     *
+     *      This method gets the number from the user, and sends the number to my NumberChecker
+     *      and gives the user a answer. The result depends on the number, is it a prime or not.
+     *
+     *      @param req HttpServletRequest
+     *      @param resp HttpServletResponse
+     *      @throws ServletException
+     *      @throws IOException
+     */
+
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         logger.info("Debug : Requesting parameter");
@@ -35,7 +49,13 @@ public class PrimenumberServlet extends HttpServlet{
         output(resp);
 
     }
-
+    /**
+     * @param resp
+     * @throws IOException
+     *
+     * This method prints the results on in a jsp file.
+     *
+     */
     private void output(HttpServletResponse resp) throws IOException {
         try (PrintWriter out = resp.getWriter()) {
             logger.info("Debug : Output started");
