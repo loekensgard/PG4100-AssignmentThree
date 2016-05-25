@@ -15,18 +15,20 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- * Created by Thorstein on 14.04.2016.
+ * @author Thorstein 14.04.2016.
+ *
+ *
  */
 @WebServlet(name ="primeNumberServlet", urlPatterns = "/primeNumberServlet")
 public class PrimenumberServlet extends HttpServlet{
     private NumberChecker nc;
-    private static final Logger logger = LogManager.getLogger("Requests");
+    private static final Logger logger = LogManager.getLogger("Results");
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        logger.info("Debug : Requesting parameter" + " - Date: " + new Date().toString());
+        logger.info("Debug : Requesting parameter");
         String primeNumber = req.getParameter("primeNumberServlet");
-        logger.info("Debug : Users number is " + primeNumber + " - Date: " + new Date().toString());
+        logger.info("Debug : Users number is " + primeNumber);
         nc = new NumberChecker(primeNumber);
         resp.setContentType("text/html");
 
@@ -34,17 +36,16 @@ public class PrimenumberServlet extends HttpServlet{
 
     }
 
-    //Output - Servlet
     private void output(HttpServletResponse resp) throws IOException {
         try (PrintWriter out = resp.getWriter()) {
-            logger.info("Debug : Output started" + " - Date: " + new Date().toString());
+            logger.info("Debug : Output started");
             int number = nc.getNumber();
             out.print("<center>");
             out.print("<h1>");
             out.println(nc.toString(number));
             out.print("</h1>");
             out.print("</center>");
-            logger.info("Debug : Output stopped"+ " - Date: " + new Date().toString());
+            logger.info("Debug : Output stopped");
         }
     }
 
