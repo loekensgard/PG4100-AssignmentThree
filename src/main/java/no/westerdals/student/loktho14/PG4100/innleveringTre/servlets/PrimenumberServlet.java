@@ -23,8 +23,6 @@ public class PrimenumberServlet extends HttpServlet{
     private NumberChecker nc;
     private static final Logger logger = LogManager.getLogger("Results");
 
-
-
     /**
      * @see HttpServlet#doPost(HttpServletRequest req, HttpServletResponse
      *      resp)

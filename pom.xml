@@ -28,20 +28,6 @@
         </developer>
     </developers>
 
-    <contributors>
-        <contributor>
-            <name>Per Lauvås</name>
-
-            <organization>Westerdals Oslo ACT</organization>
-            <organizationUrl>http://www.westerdals.no</organizationUrl>
-            <timezone>UTC+1</timezone>
-            <email>lauper@westerdals.no</email>
-            <roles>
-                <role>Teacher</role>
-            </roles>
-        </contributor>
-    </contributors>
-
     <build>
         <finalName>loktho14</finalName>
         <plugins>
